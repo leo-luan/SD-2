@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Sistemas Distribuídos - Aula01</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<p>
+						Universidade do Estado de Mato Grosso <br />
+						<em>Campus</em> Cáceres <br />
+						Faculdade de Ciências Exatas <br/>
+						Bacharelado em Ciência da Computação
+					</p>
+					<br />
+					<h2>Sistemas Distribuídos</h2>
+					<h4>Introdução</h4>
+					<br />
+					<p>
+						Leonardo Luan Martins da Silva <br />
+						15 de fevereiro de 2019
+					</p>
+				</section>
+
+				<section style="text-align: left">
+					<h3>Contextualização</h3>
+					<br />
+					<table>
+						<tr><td>Fator 1</td><td>-> PC’s com capacidade elevada</td></tr>
+						<tr class="fragment fade-in"><td>Fator 2</td><td>-> LAN (Local Area Networks)</td></tr>
+						<tr class="fragment fade-in"><td>Resultado</td><td>-> Sistemas Distribuídos</td></tr>
+					</table>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>Definição</h3>
+					<br />
+					<ul>
+						<li><q>Um SD é um conjunto de computadores independentes que se apresenta a seus usuários como um sistema único e coerente.</q></li>
+						<li>Computadores independentes (autônomos)</li>
+						<li>Componentes colaborativos (coerentes)</li>
+						<li>MIDDLEWARE</li>
+					</ul>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>Metas</h3>
+					<p>Para a construção de um SD valer a pena, deve:</p>
+					<br/>
+					<section>
+						<ul>
+							<li><strong>Acesso a recursos</strong></li>
+							<ul>
+								<li>Facilitar usuários e aplicações acessarem recursos remotos ou compartilhados.</li>
+								<li>Exemplos: Impressoras, computadores, armazenamento, dados, WEB pages, etc.</li>
+								<li>Os principais benefícios são <span style='text-decoration: underline'>economia</span> e <span style='text-decoration: underline'>colaboração</span>.</li>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%' data-transition='convex-in none'>
+						<ul>
+							<li><strong>Transparência</strong>: um SD deve ser capaz de se apresentar como um único sistema.</li>
+							<ul>
+								<li>Transparência de Acesso: ocultar diferenças na representação dos dados e na arquitetura das máquinas, e padronizar o modo de acesso aos recursos.</li>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%' data-transition='none'>
+						<ul>
+							<li><strong>Transparência</strong>: um SD deve ser capaz de se apresentar como um único sistema.</li>
+							<ul>
+								<li>Transparência de Localização: ocultar a localização física de um recurso no SD.</li>
+							</ul>
+						</ul>
+					</section>
+					<section  style='font-size: 90%' data-transition='none'>
+						<ul>
+							<li><strong>Transparência</strong>: um SD deve ser capaz de se apresentar como um único sistema.</li>
+							<ul>
+								<li>Transparência de Migração: possibilitar que recursos sejam movidos sem afetar o modo como são acessados.</li>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%'  data-transition='none'>
+						<ul>
+							<li><strong>Transparência</strong>: um SD deve ser capaz de se apresentar como um único sistema.</li>
+							<ul>
+								<li>Transparência de Realocação: possibilita que recursos sejam realocados enquanto estão sendo acessados sem que o usuário perceba.</li>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%'  data-transition='none'>
+						<ul>
+							<li><strong>Transparência</strong>: um SD deve ser capaz de se apresentar como um único sistema.</li>
+							<ul>
+								<li>Transparência de Replicação: ocultar o fato de que existem várias cópias de um recurso.</li>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%'  data-transition='none'>
+						<ul>
+							<li><strong>Transparência</strong>: um SD deve ser capaz de se apresentar como um único sistema.</li>
+							<ul>
+								<li>Transparência de Concorrência: ocultar que um recurso está sendo utilizado por outro usuário ao mesmo tempo.</li>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%'  data-transition='none'>
+						<ul>
+							<li><strong>Transparência</strong>: um SD deve ser capaz de se apresentar como um único sistema.</li>
+							<ul>
+								<li>Transparência de Falhas: ocultar o fato de que um recurso está ficou indisponível, e que o sistema se recuperou da falha.</li>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%'>
+						<ul>
+							<li><strong>Abertura</strong>: Um SD aberto é um sistema que oferece serviços de acordo com regras padronizadas que descrevem a sintaxe e a semântica desses serviços.</li>
+							<ul>
+								<li>Essas regras podem ser especificadas por:	</li>
+								<ul>
+									<li>Protocolos (HTTP)</li>
+									<li>Interfaces (IDL)</li>
+								</ul>
+								<li>Interoperabilidade e Portabilidade</li>
+								<li>Separação entre Política e Mecanismo</li>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%' data-transition='convex-in none'>
+						<ul>
+							<li><strong>Escalabilidade</strong>: Capacidade de realizar uma quantidade crescente de trabalho.</li>
+							<ul>
+								<li>Dimensões:	</li>
+								<ul>
+									<li>Tamanho: mais usuários e mais recursos</li>
+									<li>Geográfico: usuários e recursos distantes;</li>
+									<li>Administrativo: abrange diferentes organizações administrativas</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%' data-transition='none'>
+						<ul>
+							<li><strong>Escalabilidade</strong>: Capacidade de realizar uma quantidade crescente de trabalho.</li>
+							<ul>
+								<li>Problemas:	</li>
+								<ul>
+									<li>Tamanho</li>
+									<ul>
+										<li>Serviços centralizados;</li>
+										<li>Dados centralizados;</li>
+										<li>Algoritmos centralizados;</li>
+									</ul>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%' data-transition='none'>
+						<ul>
+							<li><strong>Escalabilidade</strong>: Capacidade de realizar uma quantidade crescente de trabalho.</li>
+							<ul>
+								<li>Problemas:	</li>
+								<ul>
+									<li>Geográfico</li>
+									<ul>
+										<li>Comunicação síncrona;</li>
+										<li>Redes de longa distância;</li>
+									</ul>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					<section style='font-size: 90%' data-transition='none'>
+						<ul>
+							<li><strong>Escalabilidade</strong>: Capacidade de realizar uma quantidade crescente de trabalho.</li>
+							<ul>
+								<li>Problemas:	</li>
+								<ul>
+									<li>Administrativo</li>
+									<ul>
+										<li>Segurança de domínio</li>
+									</ul>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>Ciladas</h3>
+					<p>Em SD, os componentes estão dispersos por uma rede. Essa dispersão diferencia esses sistemas de sistemas centralizados, e levanta algumas premissas falsas.</p>
+					<br/>
+					<section>
+						<ul>
+							<li>A rede é confiável</li>
+							<li>A rede é segura</li>
+							<li>A rede é homogênea</li>
+							<li>A topologia não muda</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>A latência é zero</li>
+							<li>A largura de banda é infinita</li>
+							<li>O custo de transporte é zero</li>
+							<li>Há um só Administrador</li>
+						</ul>
+					</section>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>Tipos de Sistemas Distribuídos</h3>
+					<br />
+
+					<section>
+						<h5>Sistemas de Computação Distribuídos:</h5>
+						<p>Realizam tarefas de computação de alto desempenho</p>
+						<ul>
+							<li>Computação em Cluster: Hardware semelhante.</li>
+							<li>Computação em Grade:  Hardware, software e rede diferentes</li>
+						</ul>
+					</section>
+
+					<section>
+						<h5>Sistemas de Informação Distribuídos:</h5>
+						<p>Aplicações integradas</p>
+						<ul>
+							<li>Transações</li>
+							<li>IAE (Integração de Aplicações Empresariais)</li>
+							<li>MOM (Message Oriented Middleware)</li>
+						</ul>
+					</section>
+				</section>
+
+				<section style="text-align: left;">
+					<h5>Lista I</h5>
+					<br />
+					<p>Faça os seguintes exercícios do livro (página 19):</p>
+					<ul>
+						<li>2</li>
+						<li>4</li>
+						<li>7</li>
+						<li>8</li>
+					</ul>
+					<br/>
+					<p><strong>Data de entrega</strong>: 17/02/2019</p>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				center: false,
+				mouseWheel: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			Reveal.configure({ slideNumber: 'c/t' });
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</body>
+</html>
